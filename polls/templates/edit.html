@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block neirong %}
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} text-center" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
+<div class="container py-5">
+  {% if user.is_authenticated %}
+    <h5>你好，{{ user.get_username }}</h5>
+    <p>发布一些新想法吧~</p>
+    <form action="/create_post" method="post">
+      {% csrf_token %}
+      <h4>标题</h4>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="post_title">
+      </div>
+      <h4>内容</h4>
+      <div class="input-group py-3">
+        <textarea class="form-control" name="post_content" rows="8"></textarea>
+      </div>
+      <div style="text-align:center" class="py-3">
+        <button type="submit" class="btn btn-primary">发布</button>
+        <a type="button" class="btn btn-outline-secondary" href="/dashboard">取消</a>
+      </div>
+    </form>
+  </div>
+  {% else %}
+    <div class="card">
+      <div class="card-body" style="text-align:center">
+        <p>请先登录噢</p>
+        <a href="/login">点我登录会话空间</a>
+      </div>
+  {% endif%}
+</div>
+{% endblock %}

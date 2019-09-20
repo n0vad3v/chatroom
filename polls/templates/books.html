@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block neirong %}
+
+<div class="card-deck">
+
+    {% for book in books %}
+
+    <div class="card py-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ book.name }} </h5>
+            <p class="card-text">{{ book.dashboard }}</p>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

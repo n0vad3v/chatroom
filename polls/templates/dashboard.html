@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block neirong %}
+<div class="container py-3">
+  <div class="card border-gray mb-3">
+    <div class="card-body text-dark">
+      <div class="card-title">
+        <h3>Welcome</h3>
+      </div>
+      <h5 class="card-text">{{user.get_username}}，你已经发布的会话共：{{post_count}} 条</h5>
+      <div class="py-2">
+        <a href="/edit" class="btn btn-sm btn-primary ">发布会话</a>
+      </div>
+      {% for post in post_list %}
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="row">
+              <div class="col-md-4">
+                <b>{{ post.post_title }}</b><br>
+              </div>
+              <div class="col-md-7">
+                {{ post.post_created_at }}
+              </div>
+              <div class="col-md-1">
+                <a href="/post/{{ post.id }}/delete" class="btn btn-sm btn-danger">删除</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

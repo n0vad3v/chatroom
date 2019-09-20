@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Chatting room</title>
+
+    <!-- Bootstrap core CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style>
+      img{
+        opacity:0.5;
+        filter:alpha(opacity=40);
+      }
+      input{
+        color: #909;
+        opacity:0.5;
+      }
+    </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <div class="container">
+      <a class="navbar-brand" href='/'>Chat Room</a>
+      {% if user.is_authenticated %}
+        <ul class="navbar-nav mr-sm-2">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/dashboard">个人中心</a>
+              <a class="dropdown-item" href="/logout">注销</a>
+            </div>
+          </li>
+        </ul>
+      {% else %}
+        <ul class="navbar-nav mr-sm-2">
+          <li class="nav-item {% if 'register' in request.path %}active{% endif %}">
+            <a class="nav-link" href="/register"><i class="fas fa-check-square"></i> 注册新账户</a>
+          </li>
+          <li class="nav-item {% if 'login' in request.path %}active{% endif %}">
+            <a class="nav-link" href="/login"><i class="fas fa-user"></i> 登录</a>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </nav>
+        {% block neirong %}
+	      {% endblock %}
+        <footer class="py-4">
+          <div style="text-align:center; background-color:#FFFF">
+
+            <div class="container">
+              <footer class="pt-4 my-md-5 pt-md-5 border-top">
+              <div class="row">
+                <div class="col-12 col-md">
+                  Chatting Room
+                  <small class="d-block mb-3 text-muted">&copy; 2019</small>
+                </div>
+              </div>
+            </footer>
+            </div>
+
+          </div>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block neirong %}
+
+{% load static %}
+<div class="container py-3">
+  <div class="card bg-dark text-white">
+    <img src="{% static "img/cat.jpg" %}" class="card-img" alt="" >
+    <div class="card-img-overlay">
+      <h3 class="card-title">会话空间</h3>
+      <p>Start your chatting here</p>
+      <form class="" action="/register" method="post">
+        {% csrf_token %}
+        <center>
+          <h2 class="py-3">创建新用户</h2>
+          <div class="card" style="width:18rem;opacity:0.6;">
+            <div class="card-body">
+              <div class="input-group py-2">
+                <input type="text" class="form-control" aria-label="" name="name">
+              </div>
+              <div class="input-group py-2">
+                <input type="password" class="form-control" aria-label="" name="password">
+              </div>
+                <button type="submit" class="btn btn-outline-secondary py-2">注册</button>
+            </div>
+          </div>
+          <p class="py-3">已有帐户，点击 <a href="/login">登录</a></p>
+        </center>
+      </form>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}
