@@ -46,21 +46,21 @@ python manage.py runserver 0.0.0.0:8000
 
 注册/登录页面：
 
-![image-20200827162459720](C:\Users\Tuki\AppData\Roaming\Typora\typora-user-images\image-20200827162459720.png)
+![image-20200827162459720](./imgs/image-20200827162459720.png)
 
 主页（已登录状态，右上角有用户名）：
 
-![image-20200827162538283](C:\Users\Tuki\AppData\Roaming\Typora\typora-user-images\image-20200827162538283.png)
+![image-20200827162538283](./imgs/image-20200827162538283.png)
 
 评论查看/发布弹框：
 
-![image-20200827162633744](C:\Users\Tuki\AppData\Roaming\Typora\typora-user-images\image-20200827162633744.png)
+![image-20200827162633744](./imgs/image-20200827162633744.png)
 
 个人面板页面：
 
-![image-20200827162715770](C:\Users\Tuki\AppData\Roaming\Typora\typora-user-images\image-20200827162715770.png)
+![image-20200827162715770](./imgs/image-20200827162715770.png)
 
 编辑动态页面：
 
-![image-20200827162741502](C:\Users\Tuki\AppData\Roaming\Typora\typora-user-images\image-20200827162741502.png)
+![image-20200827162741502](./imgs/image-20200827162741502.png)
 
