@@ -16,11 +16,11 @@
       {% csrf_token %}
       <h4>标题</h4>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" name="post_title">
+        <input type="text" class="form-control" name="post_title" required>
       </div>
       <h4>内容</h4>
       <div class="input-group py-3">
-        <textarea class="form-control" name="post_content" rows="8"></textarea>
+        <textarea class="form-control" name="post_content" rows="8" required></textarea>
       </div>
       <div style="text-align:center" class="py-3">
         <button type="submit" class="btn btn-primary">发布</button>
