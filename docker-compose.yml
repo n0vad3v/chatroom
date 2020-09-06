@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+    chatroom:
+        image: n0vad3v/chatroom
+        restart: always
+        ports:
+            - 127.0.0.1:8888:8888
